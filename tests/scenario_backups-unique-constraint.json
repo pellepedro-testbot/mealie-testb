@@ -22,14 +22,14 @@
     "QueryParams": {},
     "StatusCode": 201,
     "Port": 9000,
-    "Timestamp": "2026-06-17T17:07:26.403Z",
+    "Timestamp": "2026-06-17T17:32:20.018Z",
     "Scheme": "http"
   },
   {
     "Source": "192.168.65.1:39998",
     "Destination": "localhost",
     "RequestBody": "{}",
-    "ResponseBody": "{}",
+    "ResponseBody": "{\"message\":\"Backup created successfully\"}",
     "RequestHeaders": {
       "Content-Type": [
         "application/json"
@@ -46,16 +46,16 @@
     "Method": "POST",
     "Path": "/backups",
     "QueryParams": {},
-    "StatusCode": 409,
+    "StatusCode": 201,
     "Port": 9000,
-    "Timestamp": "2026-06-17T17:07:26.403Z",
+    "Timestamp": "2026-06-17T17:32:20.018Z",
     "Scheme": "http"
   },
   {
     "Source": "192.168.65.1:39998",
     "Destination": "localhost",
     "RequestBody": "",
-    "ResponseBody": "{}",
+    "ResponseBody": "{\"imports\":[]}",
     "RequestHeaders": {
       "Content-Type": [
         "application/json"
@@ -74,7 +74,7 @@
     "QueryParams": {},
     "StatusCode": 200,
     "Port": 9000,
-    "Timestamp": "2026-06-17T17:07:26.403Z",
+    "Timestamp": "2026-06-17T17:32:20.018Z",
     "Scheme": "http"
   }
 ]

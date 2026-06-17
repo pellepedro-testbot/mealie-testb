@@ -22,14 +22,14 @@
     "QueryParams": {},
     "StatusCode": 201,
     "Port": 9000,
-    "Timestamp": "2026-06-17T17:07:28.926Z",
+    "Timestamp": "2026-06-17T17:32:22.631Z",
     "Scheme": "http"
   },
   {
     "Source": "192.168.65.1:39998",
     "Destination": "localhost",
     "RequestBody": "",
-    "ResponseBody": "{}",
+    "ResponseBody": "{\"imports\":[]}",
     "RequestHeaders": {
       "Content-Type": [
         "application/json"
@@ -46,9 +46,9 @@
     "Method": "GET",
     "Path": "/backups",
     "QueryParams": {},
-    "StatusCode": 403,
+    "StatusCode": 200,
     "Port": 9000,
-    "Timestamp": "2026-06-17T17:07:28.926Z",
+    "Timestamp": "2026-06-17T17:32:22.631Z",
     "Scheme": "http"
   }
 ]

@@ -18,18 +18,18 @@
       ]
     },
     "Method": "POST",
-    "Path": "/debug/openai/00000000-0000-0000-0000-000000000001",
+    "Path": "/debug/openai/f47ac10b-58cc-4372-a567-0e02b2c3d479",
     "QueryParams": {},
     "StatusCode": 201,
     "Port": 9000,
-    "Timestamp": "2026-06-17T17:07:31.296Z",
+    "Timestamp": "2026-06-17T17:32:25.873Z",
     "Scheme": "http"
   },
   {
     "Source": "192.168.65.1:39998",
     "Destination": "localhost",
     "RequestBody": "{}",
-    "ResponseBody": "{}",
+    "ResponseBody": "{\"success\":true,\"response\":\"OpenAI is working.\"}",
     "RequestHeaders": {
       "Content-Type": [
         "application/json"
@@ -44,11 +44,11 @@
       ]
     },
     "Method": "POST",
-    "Path": "/debug/openai/00000000-0000-0000-0000-000000000001",
+    "Path": "/debug/openai/f47ac10b-58cc-4372-a567-0e02b2c3d479",
     "QueryParams": {},
-    "StatusCode": 409,
+    "StatusCode": 201,
     "Port": 9000,
-    "Timestamp": "2026-06-17T17:07:31.296Z",
+    "Timestamp": "2026-06-17T17:32:25.873Z",
     "Scheme": "http"
   }
 ]
