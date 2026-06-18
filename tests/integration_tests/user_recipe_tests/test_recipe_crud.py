@@ -1709,3 +1709,41 @@ def test_create_recipe_slug_length_validation(api_client: TestClient, unique_use
 
     response = api_client.get(api_routes.recipes_slug(created_slug), headers=unique_user.token)
     assert response.status_code == 200
+
+
+def test_create_recipe_negative_servings_rejected(api_client: TestClient, unique_user: TestUser):
+    # First create a valid recipe
+    recipe_name = random_string()
+    response = api_client.post(api_routes.recipes, json={"name": recipe_name}, headers=unique_user.token)
+    assert response.status_code == 201
+    slug = json.loads(response.text)
+
+    # Now update with negative recipe_servings — should be rejected
+    response = api_client.patch(
+        api_routes.recipes_slug(slug),
+        json={"recipe_servings": -1},
+        headers=unique_user.token,
+    )
+    assert response.status_code == 422
+
+
+def test_update_recipe_negative_yield_quantity_rejected(api_client: TestClient, unique_user: TestUser):
+    # First create a valid recipe
+    recipe_name = random_string()
+    response = api_client.post(api_routes.recipes, json={"name": recipe_name}, headers=unique_user.token)
+    assert response.status_code == 201
+    slug = json.loads(response.text)
+
+    # Fetch the recipe to get current data for a full PUT
+    response = api_client.get(api_routes.recipes_slug(slug), headers=unique_user.token)
+    assert response.status_code == 200
+    recipe = json.loads(response.text)
+
+    # Update recipe_yield_quantity to a negative value — should be rejected
+    recipe["recipeYieldQuantity"] = -1.0
+    response = api_client.put(
+        api_routes.recipes_slug(slug),
+        json=recipe,
+        headers=unique_user.token,
+    )
+    assert response.status_code == 422
