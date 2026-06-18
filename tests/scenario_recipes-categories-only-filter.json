@@ -1,0 +1,110 @@
+[
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"name\": \"SkyTestCat\"}",
+    "ResponseBody": "{\"id\": \"5bce3ffc-d31e-416a-9a90-31c4e9527001\", \"groupId\": \"11111111-1111-1111-1111-111111111111\", \"name\": \"SkyTestCat\", \"slug\": \"skytestcat\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/organizers/categories",
+    "QueryParams": {},
+    "StatusCode": 201,
+    "Port": 9000,
+    "Timestamp": "2026-06-18T13:29:17.332Z",
+    "Scheme": "http"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"name\": \"SkyTestRecipeCat\"}",
+    "ResponseBody": "\"skytestrecipecat\"",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/recipes",
+    "QueryParams": {},
+    "StatusCode": 201,
+    "Port": 9000,
+    "Timestamp": "2026-06-18T13:29:17.332Z",
+    "Scheme": "http"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"name\": \"SkyTestRecipeCat\", \"slug\": \"skytestrecipecat\", \"recipeCategory\": [{\"id\": \"5bce3ffc-d31e-416a-9a90-31c4e9527001\", \"name\": \"SkyTestCat\", \"slug\": \"skytestcat\"}]}",
+    "ResponseBody": "{\"slug\": \"skytestrecipecat\", \"name\": \"SkyTestRecipeCat\", \"recipeCategory\": [{\"id\": \"5bce3ffc-d31e-416a-9a90-31c4e9527001\", \"name\": \"SkyTestCat\", \"slug\": \"skytestcat\"}]}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "PATCH",
+    "Path": "/api/recipes/skytestrecipecat",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 9000,
+    "Timestamp": "2026-06-18T13:29:17.332Z",
+    "Scheme": "http"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"page\": 1, \"per_page\": 50, \"total\": 1, \"total_pages\": 1, \"items\": [{\"slug\": \"skytestrecipecat\", \"recipeCategory\": [{\"id\": \"5bce3ffc-d31e-416a-9a90-31c4e9527001\", \"name\": \"SkyTestCat\", \"slug\": \"skytestcat\"}]}]}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/recipes",
+    "QueryParams": {
+      "categories_only": [
+        "true"
+      ]
+    },
+    "StatusCode": 200,
+    "Port": 9000,
+    "Timestamp": "2026-06-18T13:29:17.332Z",
+    "Scheme": "http"
+  }
+]
