@@ -33,8 +33,9 @@ def recipes(api_client: TestClient, unique_user: TestUser):
 
         response = api_client.get(f"{api_routes.recipes}/{slug}", headers=unique_user.token)
         assert response.status_code == 200
-
-        recipe = Recipe.model_validate(response.json())
+        recipe_data = response.json()
+        assert isinstance(recipe_data.get("time_fields_count"), int)
+        recipe = Recipe.model_validate(recipe_data)
         recipes.append(recipe)
 
     yield recipes
