@@ -574,6 +574,8 @@ def test_read_update(
     assert response.status_code == 200
 
     recipe = json.loads(response.text)
+    assert isinstance(recipe.get("time_fields_count"), int)
+    assert recipe["time_fields_count"] >= 0
 
     test_notes = [
         {"title": "My Test Title1", "text": "My Test Text1"},

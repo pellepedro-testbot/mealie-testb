@@ -40,6 +40,8 @@ def test_recipe_assets_create(api_client: TestClient, unique_user: TestUser, rec
     recipe_respons = response.json()
 
     assert recipe_respons["assets"][0]["name"] == payload["name"]
+    assert isinstance(recipe_respons.get("time_fields_count"), int)
+    assert recipe_respons["time_fields_count"] >= 0
 
 
 def test_recipe_asset_exploit(api_client: TestClient, unique_user: TestUser, recipe_ingredient_only: Recipe):

@@ -63,6 +63,37 @@ def test_recipe_string_sanitation(field: str, val: Any, expected: Any):
     assert getattr(recipe, field) == expected
 
 
+@pytest.mark.parametrize(
+    ["prep_time", "cook_time", "perform_time", "total_time", "expected_count"],
+    [
+        (None, None, None, None, 0),
+        ("30 mins", None, None, None, 1),
+        ("30 mins", "1 hr", None, None, 2),
+        ("30 mins", "1 hr", "15 mins", None, 3),
+        ("30 mins", "1 hr", "15 mins", "2 hrs", 4),
+    ],
+)
+def test_time_fields_count(
+    prep_time: str | None,
+    cook_time: str | None,
+    perform_time: str | None,
+    total_time: str | None,
+    expected_count: int,
+):
+    recipe = RecipeSummary(
+        id=uuid4(),
+        user_id=uuid4(),
+        household_id=uuid4(),
+        group_id=uuid4(),
+        prep_time=prep_time,
+        cook_time=cook_time,
+        perform_time=perform_time,
+        total_time=total_time,
+    )
+
+    assert recipe.time_fields_count == expected_count
+
+
 def test_recipe_preserves_existing_slug():
     recipe = RecipeSummary(
         id=uuid4(),
