@@ -33,5 +33,6 @@ jobs:
           targetReadyCheckCommand: 'curl -f http://localhost:9000/api/app/about'
           targetReadyCheckTimeout: 180
           authTokenCommand: './deployment-testbot/get-token.sh'
+          uiCredentials: ${{ secrets.MEALIE_UI_CREDENTIALS }}
           autoCommit: true
           postPrComment: true
